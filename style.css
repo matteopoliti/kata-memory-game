@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+}
+
+body{
+    background: #2525CC;
+}
+
+.container{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+/* sezione memory card */
+.cards{
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    width: calc(100% / 4 );
+}
+
+/* sezione errori e titolo */
+.info {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+.info img{
+    width: 25rem;
+    display: block;
+}
+.info p{
+    font-size: 20px;
+    text-align: center;
+}
+.info span {
+    font-size: 26px;
+}
