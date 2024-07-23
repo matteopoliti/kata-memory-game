@@ -27,8 +27,33 @@ body{
     justify-content: center;
 }
 .card{
-    width: calc(100% / 4 );
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+    transform: scale(1);
+    background-image: url("./images/back.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
 }
+.card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+.card img{
+    opacity: 0;
+}
+
+.card.clicked img,
+.card.checked img{
+    opacity: 1;
+}
+
+.card.shake{
+    animation: shake 0.5s;
+}
+
 
 /* sezione errori e titolo */
 .info {
