@@ -56,7 +56,8 @@ let counter = 0;
 document.addEventListener("DOMContentLoaded", (event) => {
 
     const cardsContainer = document.querySelector(".container .cards");
-    
+    let errorCounter = 0;
+    let result= [];
 
     shuffleArray(img)
 
@@ -88,11 +89,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         for (const card of correctCards) {
                             card.classList.add("checked");
                             card.classList.remove("clicked");
+                            result.push(card);
+                            console.log(result)
                         }
                     }
                 }else{
                     const incorrectCards = document.querySelectorAll(".card.clicked");
-                    const errCounter = document.querySelector(".info .err-counter"); 
+                    const error = document.querySelector(".info .err-counter"); 
+                    
 
                     if (incorrectCards.length > 0) {
                         for (const card of incorrectCards) {
@@ -100,15 +104,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
                             setTimeout(()=>{
                                 card.classList.remove("shake");
                                 card.classList.remove("clicked");
-                            }, 800)
+                            }, 600)
                         }
+                        errorCounter++;
                     }
+                    error.innerHTML = `Errori: ${errorCounter}`
+                }
+                if(result.length === 12){
+                    displayVictoryMessage();
                 }
             }
-
-            
         })
+        
     })
+
 });
 
 function shuffleArray(array) {
@@ -119,4 +128,9 @@ function shuffleArray(array) {
         array[j] = temp;
     }
 }
+
+    function displayVictoryMessage() {
+        const victoryMessage = document.getElementById('victory-message');
+        victoryMessage.classList.remove('hidden');
+    }
 

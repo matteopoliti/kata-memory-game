@@ -25,8 +25,18 @@
 
                 <p>Abbina i simboli uguali e scopri tutta la griglia</p>
 
-                <span class="err-counter"></span>
+                <span class="err-counter">Errori: 0</span>
+
+                <button type="button" class="restart-btn" onClick="window.location.reload()">
+                    Riprova!
+                </button>
             </div>
+        </div>
+        <div id="victory-message" class="hidden">
+            <h1>Hai vinto!</h1>
+            <button type="button" class="restart-btn" onClick="window.location.reload()">
+                Riprova!
+            </button>
         </div>
 
 
